@@ -53,7 +53,7 @@ There are no supplied test files. No tests were modified.
 | Reject/Edit behavior | Both rejected without posting when replaying the saved real 0.65 analysis; no new LLM call |
 | Clean clone: Python 3.13.15, `uv sync --frozen` | Passed; 79 packages installed |
 | Clean clone: four CLI demos | All exited 0: Ex1 PR #2 escalated at 0.50; Ex2 PR #1 rejected at 0.65; Ex3 PR #2 auto branch at 0.95; Ex4 restored completed SQLite thread |
-| Final Vlearn submission | Repository ready; awaiting final form submission |
+| Final Vlearn submission | Submitted on time, BN-261015-42848, 22:57:21 on 2026-10-15 (Vietnam time); rating 5/5 |
 
 Offline diagnostics are not claimed as real PR reviews or human responses. Their database and scripts
 are outside the submission repository. The initial provider failure is not a successful review.
