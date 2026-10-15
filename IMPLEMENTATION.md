@@ -51,7 +51,9 @@ There are no supplied test files. No tests were modified.
 | Exercise 3 live escalation | 0.52, three user answers, synthesize to 0.80, committed_after_escalation |
 | Exercise 4/5 live UI | PR #1 approval and PR #2 escalation both committed; SQLite persisted across processes; browser reload restored waiting card |
 | Reject/Edit behavior | Both rejected without posting when replaying the saved real 0.65 analysis; no new LLM call |
-| Final Vlearn submission | Pending complete live evidence |
+| Clean clone: Python 3.13.15, `uv sync --frozen` | Passed; 79 packages installed |
+| Clean clone: four CLI demos | All exited 0: Ex1 PR #2 escalated at 0.50; Ex2 PR #1 rejected at 0.65; Ex3 PR #2 auto branch at 0.95; Ex4 restored completed SQLite thread |
+| Final Vlearn submission | Repository ready; awaiting final form submission |
 
 Offline diagnostics are not claimed as real PR reviews or human responses. Their database and scripts
 are outside the submission repository. The initial provider failure is not a successful review.
@@ -87,6 +89,7 @@ with optional reasoning_effort=low and a 90-second per-request timeout. `common.
 - Exercise 3: https://github.com/VinUni-AI20k/PR-Demo/pull/2#issuecomment-6196044152
 - Exercise 4/5 approval: https://github.com/VinUni-AI20k/PR-Demo/pull/1#issuecomment-6196048890
 - Exercise 4/5 escalation: https://github.com/VinUni-AI20k/PR-Demo/pull/2#issuecomment-6196089740
+- Clean-clone Exercise 3 automatic branch: https://github.com/VinUni-AI20k/PR-Demo/pull/2#issuecomment-6196286040
 
 Live SQLite thread IDs: `lab27-live-pr1` and `08824edc-c69a-45c1-98a8-35c73640103f`.
 Reviewer requirements supplied by the user: HTTPS in production, bcrypt, server-authenticated sessions/user IDs.
@@ -103,6 +106,9 @@ Additional migration/permission requirements not supplied by the reviewer were e
   The rejection/edit checks therefore explicitly replayed the previously saved real 0.65 analysis.
   Scores were never overwritten and thresholds were not changed to make an experiment pass.
 - The API results and branch checks do not establish production reliability or calibrated probabilities.
+- In the clean-clone CLI run, PR #2 received 0.95 and took the automatic branch despite its security issues.
+  This run verifies execution of that branch, not the correctness of its confidence or a new escalation cycle.
+  The earlier live 0.52 run supplies actual escalation evidence. The fixed assignment thresholds were preserved.
 
 LangGraph currently warns when deserializing the custom PRAnalysis type; the diagnostic restored it
 successfully, but a future stricter serializer will require registering that type explicitly.
